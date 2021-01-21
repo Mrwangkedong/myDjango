@@ -1,0 +1,50 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>标题111</title>
+    <script src="{% static 'company_app/static/js/mui.min.js' %}"></script>
+    <link href="{% static 'company_app/static/css/mui.css' %}" rel="stylesheet"/>
+    <link href="{% static 'company_app/static/css/test.css' %}" rel="stylesheet"/>
+    <link href="{% static 'company_app/static/css/mui.min.css' %}" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8">
+        mui.init();
+    </script>
+</head>
+<header class="mui-bar mui-bar-nav mui-bar-nav-bg">
+    <a id="icon-menu" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="mycompany.html"></a>
+    <a class="mui-action-back mui-icon mui-icon-home mui-pull-right mui-a-color" href="mycompany.html"></a>
+    <h1 class="mui-title">标题文字</h1>
+</header>
+<body>
+<div class="mui-content">
+<ul class="mui-table-view">
+            {% for department in departments %}
+			<li class="mui-table-view-cell mui-collapse">
+				<a class="mui-navigate-right" href="">{{ department.name }}</a>
+				<div class="mui-collapse-content">
+                    {% for person in department.get_persons %}
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<div class="mui-slider-right mui-disabled">
+								<a class="mui-btn mui-btn-grey mui-icon mui-icon-person">通话</a>
+								<a class="mui-btn mui-btn-yellow mui-icon mui-icon-phone">视频</a>
+							</div>
+							<div class="mui-slider-handle">
+								<div class="mui-table-cell">
+									<a style="color: black">{{ person.name }}</a>
+								</div>
+							</div>
+						</li>
+					</ul>
+                        {% endfor %}
+				</div>
+			</li>
+    {% endfor %}
+		</ul>
+</div>
+</body>
+</html>

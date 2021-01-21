@@ -1,0 +1,215 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>TVCS拆分</title>
+    <link href="{% static 'daohang2.css' %}" rel="stylesheet"/>
+	</head>
+	<body>
+		<UL id=nav>
+		<LI class=top><A class=top_link 
+		href="#"><SPAN>首页</SPAN></A></LI>	
+		<LI class=top><A id=services class=top_link href="#"><SPAN 
+		class=down>VCS</SPAN></A> 
+		<UL class=sub>
+		<LI><A class=fly href="#">基于或运算的TVCS</A> 
+		<UL>
+		<LI><A href="page_two.html">拆分</A></LI>
+		<LI><A href="page_one.html">重构</A></LI></UL></LI>
+		<LI><A class=fly href="#">基于或运算的TVCS</A> 
+		<UL>
+		<LI><A href="#">拆分</A></LI>
+		<LI><A href="#">重构</A></LI></UL></LI>
+		</UL></LI>
+		<LI class=top><A class=top_link
+		href="#"><SPAN>PISSS</SPAN></A></LI>	
+		<LI class=top><A class=top_link href="#"><SPAN>TIOISSS</SPAN></A>
+		<UL class=sub><LI><A class=fly href="page_four.html">拆分</A>
+		</LI>
+		<LI><A class=fly href="page_three.html">重构</A></LI>
+		</UL>
+		</LI>
+		</UL>
+
+		<div id="iframe1">
+			<label id="label">秘密图像</label>
+			<div id="I1contentl">
+				<div id="image">
+					<img id="img" src="">
+				    <!-- <img src="1.jpg"  alt="图像路径错误" /> -->
+				</div>
+			</div>
+			<!-- 选择将要拆分的图像 -->
+            <form enctype="multipart/form-data" action="{% url 'myapp:upload_file' %}" method="post">
+                <input type="file" id="selectPictrue"  name="selectPictrue" onchange="showImg(this)" style="margin-top: 2%;"/>
+                <input type="submit" value="upload" style="display: none" id="submit"/>
+            </form>
+			<!-- <button id="selectPictrue" >选择秘图...</button> -->
+		</div>
+		<!-- 展示将要拆分的图像 -->
+		<div id="imageSymbol">
+            <img src="{% static 'photo/right.jpg' %}"  id="symbol1"/>
+		</div>
+		
+		<div id="iframe4">
+			<div id="I4contentt">
+				<label id="label">门限限定（各个门限逗号分隔）</label>
+				<p><input id="ss" value=""/><button onclick="goprogress()">秘密分拆</button></p>
+				<progress value="0" max="100" id="progress"></progress>
+			</div>
+			<!-- 展示进度文字，用ajax -->
+			<div id="I4contentb">
+				<label id="label">门限结构</label>
+				<p id="jiegou" ></p>
+			</div>
+		</div>
+		
+		<div id="imageSymbol">
+            <img src="{% static 'photo/bottom.jpg' %}"  id="symbol2"/>
+		</div>
+
+		<div id="iframe3" >
+			<label id="label">生成份额图像</label>
+			<!--<button id="keep">保存</button>-->
+			<span id="keep"><button><a href="123.png" download="123.png">保存</a></button></span>
+			<p id="Fpicture"></p>
+			<!--保存按钮-->
+			<!--下面中间部分显示内容-->
+			<iframe name="piq" align="bottom"  frameborder="no" border="0" src="123.png"
+									 marginwidth="0" marginheight="0" scrolling="yes" id="piq"></iframe>
+		</div>
+		
+		<div id="imageSymbol">
+            <img src="{% static 'photo/left.jpg' %}"  id="symbol3"/>
+		</div>
+		
+		<div id="iframe2">
+			<label id="label">矩阵</label>
+			<div id="I2contentl">
+				<ul id="content"></ul>
+			</div>
+			<!-- <button id="selectIframe3">可视份额图像选取</button> -->
+			<input type="file" name="file" id="selectIframe3" multiple />
+			<div id="I2contentr">
+				
+			</div>
+		</div>
+	</body>
+	<script>
+
+
+	  function goprogress(){
+            var submit = document.getElementById('submit');
+            submit.click();
+	     var pro=document.getElementsByTagName("progress")[0];
+	        var getNew=document.getElementById("ss").value;
+	        goStructure(getNew);
+	        splitt(getNew);
+	        gotoend(pro,0);
+	    }
+	    function goStructure(getNew){
+	        document.getElementById("jiegou").innerHTML=getNew;
+	    }
+	
+		//进度条
+	    function gotoend(pro,value){
+	        var value=value+1;
+	        pro.value=value;
+	        if(value<100) {
+	            setTimeout(function(){gotoend(pro, value);},20)
+	        }else{
+	            setTimeout(function(){alert("任务完成")},20);
+	        }
+	    }
+	
+	    function splitt(getNew) {
+	        var str = getNew;
+	        var str2=str.split(",");
+	        var str3=str2[0]*str2[1];
+	        getFenEpicture(str3);
+	        //alert(str3);
+	    }
+	
+	    function getFenEpicture(str3){
+	        for(var i=1;i<=str3;i++){
+	
+	
+	            ul = document.createElement("ul");
+	            a = document.createElement("a");
+	
+	            a.href='123.png';
+	            a.target='piq';
+	            var t=document.createTextNode(i+" of "+str3);
+	            a.appendChild(t);
+	            //a.id=i;
+	            br = document.createElement("br");
+	            li = document.createElement("li");
+	            li.appendChild(a);
+	            li.appendChild(br);
+	            ul.appendChild(li);
+	            document.getElementById("Fpicture").appendChild(ul);
+	
+	        }
+	    }
+		
+		var f;		//选择的所有文件
+		//得到选择的所有文件
+		function getAllFiles(){
+			//alert("iamgetAllFiles");
+			var f = document.getElementById("selectIframe3").files;
+		}
+		
+		//选取txt文件并进行展示
+		function showText(i)
+		{
+			//alert("hello I am showText");
+		    var reader = new FileReader();
+		    reader.onload = function() 
+		    {
+				document.getElementById('I2contentr').innerHTML=this.result;
+		        //alert(this.result)
+		    }
+		    var f = document.getElementById("selectIframe3").files;
+		    reader.readAsText(f[i]);
+		}
+		
+		//选取密图并进行显示
+		function showImg(file){	
+				var reader = new FileReader();	// 实例化一个FileReader对象，用于读取文件
+				var img = document.getElementById('img'); 	// 获取要显示图片的标签
+				
+				//读取File对象的数据
+				reader.onload = function(evt){
+					img.width  =  "500";
+			        img.height =  "350";
+					//alert(file.files[2]);
+					img.src = evt.target.result;
+					// document.getElementById("789").href=evt.target.result;
+				}
+			    reader.readAsDataURL(file.files[0]);
+			}
+
+	
+	
+	
+	var test = document.getElementById('selectIframe3');
+	test.addEventListener('change', function() {
+		//alert("iamtesteventlistener");
+		var reader = new FileReader();
+	    var t_files = this.files;
+	    console.log(t_files);
+	    var str = '';
+	    for (var i = 0, len = t_files.length; i < len; i++) {
+	        console.log(t_files[i]);
+			var testStr = "hello";
+	        str += '<li onclick="showText('+i+')">' + t_files[i].name + '</li>';
+	    };
+	    document.getElementById('content').innerHTML = str;
+
+	}, false);
+	
+	</script>
+</html>
+
+

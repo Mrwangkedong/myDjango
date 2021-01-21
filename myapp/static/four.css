@@ -1,0 +1,258 @@
+		
+			#nav {
+			Z-INDEX: 500; PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 37px; LIST-STYLE-IMAGE: none; PADDING-TOP: 5px
+			}
+			#nav LI.top {
+			DISPLAY: block; FLOAT: left; HEIGHT: 27px;
+			}
+			#nav{
+				width: 500px;
+				display: flex;
+				/* grid-template-rows:100%; */
+				/* grid-template-columns:200px 200px 200px 200px;	 */
+			}
+			.top{
+				display: inline-block;
+				width: 200px;
+			}
+			/* 一阶导航 */
+			#nav LI A.top_link {
+			PADDING-BOTTOM: 0px; LINE-HEIGHT: 27px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: block; FLOAT: left; HEIGHT: 37px; FONT-SIZE: 20px; CURSOR: pointer; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 0px
+			}
+			#nav LI A.top_link SPAN {
+			PADDING-BOTTOM: 0px; WIDTH: 90px; DISPLAY: block; text-align:center; FLOAT: left; HEIGHT: 27px; PADDING-TOP: 0px
+			}
+			#nav LI A.top_link SPAN.down {
+			PADDING-BOTTOM: 0px; WIDTH: 80px; DISPLAY: block; text-align:center; BACKGROUND: url(images/three1.gif) no-repeat right; FLOAT: left; HEIGHT: 37px; PADDING-TOP: 0px
+			}
+			#nav LI:hover A.top_link {
+			background-color:#548bcf; color:#fff2ee;
+			}
+			#nav LI:hover A.top_link SPAN {
+			background-color:#548bcf; color:#fff2ee;
+			}
+			#nav LI:hover A.top_link SPAN.down {
+			background-color:#548bcf; color:#fff2ee;BACKGROUND: url(images/three1a.gif) no-repeat right;
+			}
+			#nav LI:hover {
+			Z-INDEX: 200; POSITION: relative
+			}
+			#nav LI:hover UL.sub {
+			Z-INDEX: 270; BORDER-BOTTOM: #ddd 1px solid; BORDER-LEFT: #ddd 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 150px; PADDING-RIGHT: 0px; WHITE-SPACE: nowrap; BACKGROUND: #e1ecf6; HEIGHT: auto; BORDER-TOP: #ddd 1px solid; TOP: 37px; BORDER-RIGHT: #ddd 1px solid; PADDING-TOP: 0px; LEFT: 1px
+			}
+			/* 二级导航 */
+			#nav LI:hover UL.sub LI {
+			POSITION: relative; WIDTH: 150px; DISPLAY: block; FLOAT: left; HEIGHT: 29px; FONT-WEIGHT: normal
+			}
+			#nav LI:hover UL.sub LI A {
+			BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; LINE-HEIGHT: 19px; TEXT-INDENT: 5px; WIDTH: 150px; DISPLAY: block; HEIGHT: 29px; COLOR: #000; FONT-SIZE: 16px; BORDER-TOP: 0px; BORDER-RIGHT: 0px; TEXT-DECORATION: none
+			}
+			#nav LI UL.sub LI A.fly {
+			BACKGROUND: url(images/arrow.gif) #e1ecf6 no-repeat left center
+			}
+			#nav LI:hover UL.sub LI A:hover {
+			BACKGROUND: url(images/subli_bg.gif) #548bcf repeat-x center center; COLOR: #fff; 
+			}
+			#nav LI:hover UL.sub LI A.fly:hover {
+			BACKGROUND: url(images/arrow_over.gif) #548bcf no-repeat left center; COLOR: #fff
+			}
+			#nav LI:hover LI:hover UL {
+			Z-INDEX: 400; BORDER-BOTTOM: #ddd 1px solid; BORDER-LEFT: #ddd 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 150px; PADDING-RIGHT: 0px; WHITE-SPACE: nowrap; BACKGROUND: #e1ecf6; HEIGHT: auto; BORDER-TOP: #ddd 1px solid; TOP: -1px; BORDER-RIGHT: #ddd 1px solid; PADDING-TOP: 0px; LEFT: 144px
+			}
+			#nav LI:hover LI:hover LI:hover UL {
+			Z-INDEX: 400; BORDER-BOTTOM: #ddd 1px solid; BORDER-LEFT: #ddd 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 150px; PADDING-RIGHT: 0px; WHITE-SPACE: nowrap; BACKGROUND: #e1ecf6; HEIGHT: auto; BORDER-TOP: #ddd 1px solid; TOP: -1px; BORDER-RIGHT: #ddd 1px solid; PADDING-TOP: 0px; LEFT: 144px
+			}
+			#nav LI:hover LI:hover LI:hover LI:hover UL {
+			Z-INDEX: 400; BORDER-BOTTOM: #ddd 1px solid; BORDER-LEFT: #ddd 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 150px; PADDING-RIGHT: 0px; WHITE-SPACE: nowrap; BACKGROUND: #e1ecf6; HEIGHT: auto; BORDER-TOP: #ddd 1px solid; TOP: -1px; BORDER-RIGHT: #ddd 1px solid; PADDING-TOP: 0px; LEFT: 144px
+			}
+			#nav LI:hover LI:hover LI:hover LI:hover LI:hover UL {
+			Z-INDEX: 400; BORDER-BOTTOM: #ddd 1px solid; BORDER-LEFT: #ddd 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 150px; PADDING-RIGHT: 0px; WHITE-SPACE: nowrap; BACKGROUND: #e1ecf6; HEIGHT: auto; BORDER-TOP: #ddd 1px solid; TOP: -1px; BORDER-RIGHT: #ddd 1px solid; PADDING-TOP: 0px; LEFT: 144px
+			}
+			#nav UL {
+			POSITION: absolute; PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 0px; PADDING-RIGHT: 0px; HEIGHT: 0px; TOP: -9999px; LIST-STYLE-IMAGE: none; PADDING-TOP: 0px; LEFT: -9999px
+			}
+			#nav LI:hover UL UL {
+			POSITION: absolute; PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 0px; PADDING-RIGHT: 0px; HEIGHT: 0px; TOP: -9999px; LIST-STYLE-IMAGE: none; PADDING-TOP: 0px; LEFT: -9999px
+			}
+			#nav LI:hover LI:hover UL UL {
+			POSITION: absolute; PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 0px; PADDING-RIGHT: 0px; HEIGHT: 0px; TOP: -9999px; LIST-STYLE-IMAGE: none; PADDING-TOP: 0px; LEFT: -9999px
+			}
+			#nav LI:hover LI:hover LI:hover UL UL {
+			POSITION: absolute; PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 0px; PADDING-RIGHT: 0px; HEIGHT: 0px; TOP: -9999px; LIST-STYLE-IMAGE: none; PADDING-TOP: 0px; LEFT: -9999px
+			}
+			#nav LI:hover LI:hover LI:hover LI:hover UL UL {
+			POSITION: absolute; PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 0px; PADDING-RIGHT: 0px; HEIGHT: 0px; TOP: -9999px; LIST-STYLE-IMAGE: none; PADDING-TOP: 0px; LEFT: -9999px
+			}
+			#nav LI:hover LI:hover A.fly {
+			BORDER-BOTTOM-COLOR: #fff; BORDER-TOP-COLOR: #fff; BACKGROUND: url(images/arrow_over.gif) #548bcf no-repeat left center; COLOR: #fff; BORDER-RIGHT-COLOR: #fff; BORDER-LEFT-COLOR: #fff; 
+			}
+			#nav LI:hover LI:hover LI:hover A.fly {
+			BORDER-BOTTOM-COLOR: #fff; BORDER-TOP-COLOR: #fff; BACKGROUND: url(images/arrow_over.gif) #548bcf no-repeat left center; COLOR: #fff; BORDER-RIGHT-COLOR: #fff; BORDER-LEFT-COLOR: #fff; 
+			}
+			#nav LI:hover LI:hover LI:hover LI:hover A.fly {
+			BORDER-BOTTOM-COLOR: #fff; BORDER-TOP-COLOR: #fff; BACKGROUND: url(images/arrow_over.gif) #548bcf no-repeat left center; COLOR: #fff; BORDER-RIGHT-COLOR: #fff; BORDER-LEFT-COLOR: #fff; 
+			}
+			#nav LI:hover LI:hover LI:hover LI:hover LI:hover A.fly {
+			BORDER-BOTTOM-COLOR: #fff; BORDER-TOP-COLOR: #fff; BACKGROUND: url(images/arrow_over.gif) #548bcf no-repeat left center; COLOR: #fff; BORDER-RIGHT-COLOR: #fff; BORDER-LEFT-COLOR: #fff; 
+			}
+			#nav LI:hover LI:hover LI A.fly {
+			BORDER-BOTTOM-COLOR: #e1ecf6; BORDER-TOP-COLOR: #e1ecf6; BACKGROUND: url(images/arrow.gif) #e1ecf6 no-repeat left center; COLOR: #000; BORDER-RIGHT-COLOR: #e1ecf6; BORDER-LEFT-COLOR: #e1ecf6
+			}
+			#nav LI:hover LI:hover LI:hover LI A.fly {
+			BORDER-BOTTOM-COLOR: #e1ecf6; BORDER-TOP-COLOR: #e1ecf6; BACKGROUND: url(images/arrow.gif) #e1ecf6 no-repeat left center; COLOR: #000; BORDER-RIGHT-COLOR: #e1ecf6; BORDER-LEFT-COLOR: #e1ecf6
+			}
+			#nav LI:hover LI:hover LI:hover LI:hover LI A.fly {
+			BORDER-BOTTOM-COLOR: #e1ecf6; BORDER-TOP-COLOR: #e1ecf6; BACKGROUND: url(images/arrow.gif) #e1ecf6 no-repeat left center; COLOR: #000; BORDER-RIGHT-COLOR: #e1ecf6; BORDER-LEFT-COLOR: #e1ecf6
+			}
+				
+				html,
+				body {
+					margin: 0;
+					padding: 0;
+					width: 100%;
+					height: 100%;
+				}
+				#iframe1{
+					
+					position: relative;
+					width: 30%;
+					height: 42%;
+					margin-left: 5%;
+				}
+				#iframe2{
+					position: relative;
+					width: 30%;
+					height: 42%;
+					margin-left: 10%;
+				}
+				#iframe1,#iframe2{
+					float: left;
+					display: inline-block;
+				}
+				#iframe3{
+					position: relative;
+					width: 30%;
+					height: 53%;
+					overflow: auto;
+				}
+				#iframe4{
+					position: relative;
+					width: 40%;
+					height: 53%;
+					border: 1px solid #808080;
+				}
+				#iframe5{
+					position: relative;
+					width: 25%;
+					height: 70%;
+					top: -15%;
+				}
+				#iframe3,#iframe4,#iframe5{
+					float: left;
+					display: inline-block;
+				}
+				#iframe3,#iframe4,#iframe5{
+					margin-left: 1%;
+					margin-top: 1%;
+				}
+				#span{
+					font-size:18px ;
+					font-weight: bolder;
+					position: absolute;
+					margin-top: 1%;
+					margin-left: 3%;
+				}
+				#iframe1_wrap{
+					position: absolute;
+					width: 94%;
+					height: 75%;
+					border: 1px solid #808080;
+					top: 12%;
+					left: 3%;
+					overflow: auto;
+				}
+				#lookinput{
+					position: absolute;
+					width: 70%;
+					margin-left: 3%;
+					top: 90%;
+				}
+				#iframe1_btn{
+					position: absolute;
+					top: 90%;
+					left: 78%;
+				}
+				
+				#iframe2_lookinput{
+					position: absolute;
+					top: 18%;
+					width: 60%;
+					height: 8%;
+					left: 3%;
+				}
+				#iframe2_btn{
+					position: absolute;
+					left: 66%;
+					top: 19%;
+				}
+				#jiazai{
+					position: absolute;
+					width: 80%;
+					height: 10%;
+					top: 35%;
+					left: 3%;
+				}
+				#iframe3_wrap{
+					position: absolute;
+					width: 94%;
+					height: 78%;
+					top: 10%;
+					border: 1px solid #808080;
+					overflow: auto;
+				}
+				#iframe3_keep{
+					position: absolute;
+					width: 25%;
+					height: 8%;
+					top: 90%;
+				}
+				#iframe3_wrap,#iframe3_keep{
+					margin-left: 3%;
+				}
+				#contentl,#contentr{
+					position: absolute;
+					width: 48%;
+					height: 76%;
+					top: 10%;
+					border: 1px #808080 solid;
+					margin-left: 1%;
+					overflow: auto;
+				}
+				#contentr{
+					left: 51%;
+				}
+				#selectIframe3{
+					position: absolute;
+					top: 90%;
+					left: 3%;
+				}
+				#progress{
+					position: absolute;
+					width: 90%;
+					height: 90%;
+				}
+				#iframe3_keep>a{
+					position: absolute;
+					width: 60%;
+					border: 1px solid #808080;
+					text-decoration: none;
+					color: black;
+					border-radius: 2px;
+					text-align: center;
+					background-color: #CCCCCC;
+				}
+				#selectPictrue{
+					position: absolute;
+					top: 90%;
+					left: 3%;
+				}

@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>标题111</title>
+    <script src="{% static 'company_app/static/js/mui.min.js' %}"></script>
+    <link href="{% static 'company_app/static/css/mui.css' %}" rel="stylesheet"/>
+    <link href="{% static 'company_app/static/css/test.css' %}" rel="stylesheet"/>
+    <link href="{% static 'company_app/static/css/mui.min.css' %}" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8">
+        mui.init();
+    </script>
+</head>
+<body>
+<div class="mui-content">
+<ul class="mui-table-view">
+    <li class="mui-table-view-cell mui-collapse">
+        <a class="mui-navigate-right" href="#">集团</a>
+
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                    公司
+                </a>
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">
+                        <a class="mui-navigate-right">
+                            部门1
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </li>
+</ul>
+</div>
+</body>
+</html>

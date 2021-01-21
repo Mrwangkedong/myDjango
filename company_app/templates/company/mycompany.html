@@ -1,0 +1,103 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>标题111</title>
+    <script src="{% static 'company_app/static/js/mui.min.js' %}"></script>
+    <link href="{% static 'company_app/static/css/mui.css' %}" rel="stylesheet"/>
+    <link href="{% static 'company_app/static/css/test.css' %}" rel="stylesheet"/>
+    <link href="{% static 'company_app/static/css/mui.min.css' %}" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8">
+        mui.init();
+    </script>
+</head>
+<body>
+<div class="mui-content">
+<div id="most" style="display: block;">
+    <ul class="mui-table-view">
+        {% for group in groups %}
+            <li class="mui-table-view-cell mui-collapse">
+                <a class="mui-navigate-right" href="">{{ group.name }}</a>
+                <div class="mui-collapse-content">
+                    {% for company in group.get_companies %}
+                        <ul class="mui-table-view">
+                            <li class="mui-table-view-cell">
+                                <div class="mui-slider-right mui-disabled">
+                                    <a class="mui-btn mui-btn-grey mui-icon mui-icon-person"
+                                       href="{% url 'company_app:companypersons' company.id %}">查看全体</a>
+                                    <a class="mui-btn mui-btn-yellow mui-icon mui-icon-phone" onclick="company_name_change()">更改公司名称</a>
+                                </div>
+                                <div class="mui-slider-handle">
+                                    <div class="mui-table-cell">
+                                        <a style="color: black"
+                                           href="{% url 'company:depertandperson' company.id %}">{{ company.name }}</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    {% endfor %}
+                <ul class="mui-table-view">
+                            <li class="mui-table-view-cell">
+
+                                <div class="mui-slider-handle">
+                                    <div class="mui-table-cell">
+                                        <p onclick="add_new({{ group.id }})" style="color: black">添加新公司</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                </div>
+            </li>
+
+        {% endfor %}
+    </ul>
+</div>
+{#添加新公司#}
+<form class="mui-input-group" id="new_computer" style="display: none;" action="{% url 'company_app:addcompany' %}" method="post">
+    {% csrf_token %}
+    <div class="mui-input-row">
+        <label>集团</label>
+        <label>
+            <input type="text" class="mui-input-clear" name="group_id" value="" id="group_id">
+        </label>
+    </div>
+    <div class="mui-input-row">
+        <label>新公司名称</label>
+        <label>
+            <input type="text" class="mui-input-clear" name="new_company_name">
+        </label>
+    </div>
+    <div class="mui-button-row">
+        <button type="submit" class="mui-btn mui-btn-primary" >确认</button>&nbsp;&nbsp;
+        <button type="button" class="mui-btn mui-btn-danger" onclick="new_cancle(this)">取消</button>
+    </div>
+</form>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+    function add_new(group_id) {
+        document.getElementById('new_computer').style.display = 'block';
+        document.getElementById('most').style.display = 'none';
+        document.getElementById('group_id').value=group_id;
+    }
+
+    function new_cancle() {
+        document.getElementById('new_computer').style.display = 'none';
+        document.getElementById('most').style.display = 'block';
+    }
+    
+    function company_name_change() {
+        mui.prompt('请输入更改后的公司名称','','title',['取消','确认'],function (e) {
+		    if(e.index==1){
+				mui.alert(e.value);
+			}else{
+				return
+			}
+		})
+    }
+</script>

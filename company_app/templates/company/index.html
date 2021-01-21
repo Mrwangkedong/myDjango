@@ -1,0 +1,103 @@
+
+<form name="form1" action="" method="get">
+<select name="province" onChange="set_city(this, this.form.city);">
+    <option value="0">选择省</option>
+    <option value="48">北京</option>
+    <option value="67">四川</option>
+    </select>
+    <select   name="city" id="citys">
+    <option value="0">选择类型</option>
+</select>
+</form>
+
+<br>
+********************************************************
+<br>
+
+<select   name="state"   onChange="cll(this.value)">
+	<option >选择积分源</option>
+	<option   value="48">北京</option>
+	<option   value="67">四川</option>
+</select>
+<BR>
+<BR>
+<div id="div1"> O2O </div>
+<div id="div2"> 商超 </div>
+<div id="div3"> 电商 </div>
+<div id="div4"> 餐饮 </div>
+<div id="div5"> 全部类型 </div>
+<br>
+********************************************************
+<br>
+<select id="a" onclick="javascript:doit(this);">
+<option value="请选择">北京</option>
+<option value="a">O2O</option>
+<option value="a">商超</option>
+<option value="a">电商</option>
+<option value="a">餐饮</option>
+</select>
+
+<select id="b" onclick="javascript:doit(this);">
+<option value="请选择">四川</option>
+<option value="b">其它</option>
+</select>
+
+<script type="text/javascript">
+function doit(o){
+   if(o.options[o.selectedIndex].value=='请选择'){
+      document.getElementById('a').disabled=false;
+      document.getElementById('b').disabled=false;
+   }else{
+      document.getElementById('a').disabled=true;
+      document.getElementById('b').disabled=true;
+   }
+   o.disabled=false;
+}
+</script>
+<script>
+function cll(id){
+	if(id==48){
+		 eval("div1.style.display=\"\";");
+		 eval("div2.style.display=\"\";");
+		 eval("div3.style.display=\"\";");
+		 eval("div4.style.display=\"\";");
+		 eval("div5.style.display=\"none\";");}
+   else{
+		 eval("div4.style.display=\"none\";");
+		 eval("div3.style.display=\"none\";");
+		 eval("div2.style.display=\"none\";");
+		 eval("div1.style.display=\"none\";");
+		 eval("div5.style.display=\"\";");}
+}
+</script>
+<script type="text/javascript">
+cities = new Object();
+	    value = new Object();
+	  	cities['48']=new Array('O2O', '商超', '电商', '餐饮');
+	    value['48']=new Array('1', '2', '3', '4');
+	    cities['67']=new Array('全部类型');
+	    value['67']=new Array('b');
+	    function set_city(supplier_id, type_list)
+	    {
+	        var pv, cv;
+	        var i, ii;
+
+	        pv=supplier_id.value;
+	        cv=type_list.value;
+
+	        type_list.length=1;
+
+	        if(pv=='0') return;
+	        if(typeof(cities[pv])=='undefined') return;
+	        if(typeof(value[pv])=='undefined') return;
+
+	        for(i=0; i<cities[pv].length; i++)
+	        {
+	           ii = i+1;
+	           type_list.options[ii] = new Option();
+	           type_list.options[ii].text = cities[pv][i];
+	           type_list.options[ii].value = value[pv][i];
+	        }
+
+	    }
+</script>

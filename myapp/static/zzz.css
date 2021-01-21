@@ -1,0 +1,71 @@
+
+.top{
+	width: 1300px;
+	height: 300px;
+	display: grid;
+	grid-template-rows:100%;
+	grid-template-columns:1.5fr 0.8fr 2.5fr;	
+	grid-column-gap:10px;
+}
+.left{
+	border:black 1px solid;
+	display: flex;
+}
+.left_1{
+	flex-grow: 1;
+}
+.left_2{
+	width: 300px;
+	border-left:black 1px solid;
+}
+.middle{
+	padding:100px 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.button{
+	padding-left: 26px;
+	margin-bottom: 10px;
+}
+.goto{
+	width: 100px;
+	height: 100px;
+	background: url(photo/right.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+.right{
+	border:black 1px solid;
+	display: grid;
+	grid-template-rows:100%;	
+	grid-template-columns:1fr 1fr;
+}
+.right_2{
+	border-left:black 1px solid;
+}
+.bottom{
+	position: absolute;
+	width:1100px;
+	height: 50px;
+	margin-top: 20px;
+	/* display: flex; */
+}
+.button_1{
+	position:relative;
+	left: 40px;
+	/* margin-left: 100px; */
+}
+.button_2{
+	/* margin-left: 400px; */
+	position:relative;
+	left: 650px;
+}
+.button_3{
+	/* margin-left: 200px; */
+	position:relative;
+	left: 940px;
+}
+.downloadButton{
+	position:relative;
+	left: 1282px;
+}
